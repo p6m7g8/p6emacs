@@ -41,4 +41,7 @@
 
      (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
 
+(global-set-key (kbd "C-x m") 'magit-status-fullscreen)
+(autoload 'magit-status-fullscreen "magit")
+
 (provide 'setup-magit)
