@@ -24,6 +24,7 @@
 (personal 'ido)
 (personal 'jenkins-setup)
 (personal 'server-mode)
+(personal 'region-setup)
 (personal 'popup-setup)
 (personal 'theme)
 (personal 'utf8)
