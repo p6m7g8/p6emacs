@@ -33,7 +33,7 @@
 (personal 'setup-confluence)
 (personal 'setup-js)
 (personal 'setup-markdown)
-(personal 'setup-vc)
+(personal 'setup-magit)
 (personal 'setup-ruby)
 (personal 'setup-shell)
 (personal 'setup-yaml)
