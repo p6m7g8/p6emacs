@@ -16,9 +16,6 @@
 ;; Find matching parens
 (global-set-key (kbd "C-'") 'match-paren)
 
-;; ibuffer > list-buffers
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
 ;; Tags
 (global-set-key (kbd "M-,") 'pop-tag-mark) ; was tags-loop-continue
 
