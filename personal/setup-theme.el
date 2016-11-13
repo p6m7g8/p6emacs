@@ -7,3 +7,5 @@
 
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode 0))
+
+(provide 'setup-theme)

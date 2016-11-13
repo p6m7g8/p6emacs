@@ -57,3 +57,5 @@
 (setq ispell-extra-args '("--sug-mode=ultra"))
 
 (add-hook 'prog-mode-hook #'hs-minor-mode)
+
+(provide 'setup-global)

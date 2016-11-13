@@ -11,3 +11,5 @@
 
 (global-set-key (kbd "C-x gb") 'gh-md-render-buffer)
 (global-set-key (kbd "C-x tg") 'markdown-toc-generate-toc)
+
+(provide 'setup-markdown)

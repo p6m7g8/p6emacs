@@ -17,3 +17,5 @@
 	      (add-to-list 'ac-sources 'ac-source-yasnippet)
 	      (auto-complete-mode t))
             (imenu-add-menubar-index)))
+
+(provide 'setup-js)

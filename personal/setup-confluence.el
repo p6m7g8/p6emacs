@@ -1,8 +1,5 @@
 (package 'confluence)
 
-;; assuming confluence.el and xml-rpc.el are in your load path
-(require 'confluence)
-
 ;; note, all customization must be in *one* custom-set-variables block
 (custom-set-variables
  ;; ... other custimization
@@ -70,3 +67,5 @@
 (add-hook 'confluence-mode-hook
 	  '(lambda ()
 	     (local-set-key "\C-xw" confluence-prefix-map)))
+
+(provide 'setup-confluence)

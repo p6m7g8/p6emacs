@@ -27,3 +27,5 @@
 (global-set-key (kbd "") 'hs-show-all)
 (global-set-key (kbd "") 'hs-hide-block)
 (global-set-key (kbd "") 'hs-hide-all)
+
+(provide 'setup-bindings)
