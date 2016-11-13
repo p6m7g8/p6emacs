@@ -16,5 +16,4 @@
 	      (make-variable-buffer-local 'ac-sources)
 	      (add-to-list 'ac-sources 'ac-source-yasnippet)
 	      (auto-complete-mode t))
-            (imenu-add-menubar-index)
-            (hs-minor-mode t)))
+            (imenu-add-menubar-index)))
