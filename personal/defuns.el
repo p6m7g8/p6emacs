@@ -7,8 +7,7 @@
 ;; For loading packages from the Emacs Lisp Package Archive (ELPA)
 (defun package (package)
     (when (not (package-installed-p package))
-      (package-install package))
-    (personal package))
+      (package-install package)))
 
 ;; For loading libraries from the vendor directory
 ;; Modified from defunkt's original version to support autoloading.
@@ -26,8 +25,7 @@
       (if autoload-functions
           (dolist (autoload-function autoload-functions)
             (autoload autoload-function (symbol-name library) nil t))
-        (require library)))
-    (personal library)))
+        (require library)))))
 
 ;; Arrows are common, especially in ruby
 (defun insert-arrow ()
