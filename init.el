@@ -22,6 +22,7 @@
 (personal 'setup-bindings)
 (personal 'setup-ffip)
 (personal 'setup-global)
+(personal 'setup-hippie)
 (personal 'setup-hs)
 (personal 'setup-ido)
 (personal 'setup-server-mode)
