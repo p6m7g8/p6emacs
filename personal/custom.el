@@ -9,6 +9,7 @@
  '(custom-safe-themes
    (quote
     ("04dd0236a367865e591927a3810f178e8d33c372ad5bfef48b5ce90d4b476481" default)))
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(package-selected-packages
    (quote
     (hippie-expand hippie yaml-mode enh-ruby-mode ruby-guard magit markdown-toc gh-md markdown-mode+ markdown-mode js3-mode confluence expand-region ido-vertical-mode flx-isearch flx-ido ibuffer-vc auto-complete ag ace-jump-mode ace-window))))

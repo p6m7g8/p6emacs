@@ -21,6 +21,7 @@
 (personal 'setup-buffers)
 (personal 'setup-bindings)
 (personal 'setup-ffip)
+(personal 'setup-flycheck)
 (personal 'setup-global)
 (personal 'setup-hippie)
 (personal 'setup-hs)
