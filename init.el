@@ -20,6 +20,7 @@
 (personal 'setup-auto-complete)
 (personal 'setup-buffers)
 (personal 'setup-bindings)
+(personal 'setup-ffip)
 (personal 'setup-global)
 (personal 'setup-hs)
 (personal 'setup-ido)

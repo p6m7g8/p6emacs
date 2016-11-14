@@ -1,5 +1,3 @@
-(package 'expand-region)
-
 ;; Browse kill ring
 (package 'browse-kill-ring)
 (setq browse-kill-ring-quit-action 'save-and-restore)
@@ -39,7 +37,14 @@
 ;; Duplicate region
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
+;; Fold the active region
+(package 'fold-this)
+(global-set-key (kbd "C-c C-f") 'fold-this-all)
+(global-set-key (kbd "C-c C-F") 'fold-this)
+(global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
+
 ;; Expand Region
+(package 'expand-region)
 (global-set-key (kbd "C-@") 'er/expand-region)
 (setq expand-region-fast-keys-enabled nil) ;; Don't use expand-region fast keys
 (setq er--show-expansion-message t) ;; Show expand-region command used

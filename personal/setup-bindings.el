@@ -16,6 +16,13 @@
 ;; Tags
 (global-set-key (kbd "M-,") 'pop-tag-mark) ; was tags-loop-continue
 
+;; Toggle quotes
+(global-set-key (kbd "C-\"") 'toggle-quotes)
+
+;; Line movement
+(global-set-key (kbd "<C-S-down>") 'move-text-down)
+(global-set-key (kbd "<C-S-up>") 'move-text-up)
+
 ;; Goto Line
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 (global-set-key (kbd "M-s l") 'sort-lines)
