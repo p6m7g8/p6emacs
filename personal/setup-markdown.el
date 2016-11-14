@@ -10,6 +10,6 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 (global-set-key (kbd "C-x gb") 'gh-md-render-buffer)
-(global-set-key (kbd "C-x tg") 'markdown-toc-generate-toc)
+(global-set-key (kbd "C-x gt") 'markdown-toc-generate-toc)
 
 (provide 'setup-markdown)
