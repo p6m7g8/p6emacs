@@ -39,6 +39,7 @@
 (personal 'setup-js)
 (personal 'setup-markdown)
 (personal 'setup-magit)
+(personal 'setup-python)
 (personal 'setup-ruby)
 (personal 'setup-shell)
 (personal 'setup-yaml)
