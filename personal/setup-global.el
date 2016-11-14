@@ -28,9 +28,6 @@
 ;; Line-wrapping
 (set-default 'fill-column 78)
 
-;; Make sure all backup files only live in one place
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
-
 ;; Gotta see matching parens
 (show-paren-mode t)
 
@@ -38,24 +35,56 @@
 (setq truncate-lines t)
 (setq truncate-partial-width-windows nil)
 
-;; For emacsclient
-(server-start)
+;; Highlight current line
+(global-hl-line-mode 1)
+
+(setq font-lock-maximum-decoration t
+      color-theme-is-global t
+      truncate-partial-width-windows nil)
+
+(setq visible-bell nil)
+(setq ring-bell-function (lambda ()
+			   (invert-face 'mode-line)
+			   (run-with-timer 0.05 nil 'invert-face 'mode-line)))
+
 
 ;; Trailing whitespace is unnecessary
 (defvar whitespace-cleanup-on-save t)
 ;; (setq whitespace-cleanup-on-save nil)
 (add-hook 'before-save-hook
-          (lambda ()
-            (if whitespace-cleanup-on-save (whitespace-cleanup))))
+	  (lambda ()
+	    (if whitespace-cleanup-on-save (whitespace-cleanup))))
 
 ;; Trash can support
 (setq delete-by-moving-to-trash t)
 
-;; `brew install aspell --lang=en` (instead of ispell)
+;; Make sure all backup files only live in one place
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+
 (setq-default ispell-program-name "aspell")
 (setq ispell-list-command "list")
 (setq ispell-extra-args '("--sug-mode=ultra"))
 
+;; Show-hide
+(global-set-key (kbd "") 'hs-show-block)
+(global-set-key (kbd "") 'hs-show-all)
+(global-set-key (kbd "") 'hs-hide-block)
+(global-set-key (kbd "") 'hs-hide-all)
 (add-hook 'prog-mode-hook #'hs-minor-mode)
+
+;; Seed the random-number generator
+(random t)
+
+;; Keep region when undoing in region
+(defadvice undo-tree-undo (around keep-region activate)
+  (if (use-region-p)
+      (let ((m (set-marker (make-marker) (mark)))
+            (p (set-marker (make-marker) (point))))
+        ad-do-it
+        (goto-char p)
+        (set-mark m)
+        (set-marker p nil)
+        (set-marker m nil))
+    ad-do-it))
 
 (provide 'setup-global)

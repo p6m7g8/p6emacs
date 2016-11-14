@@ -1,3 +1,6 @@
+;; For emacsclient
+(server-start)
+
 (defun server-save-edit ()
   (interactive)
   (save-buffer)

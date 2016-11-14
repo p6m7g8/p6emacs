@@ -22,12 +22,6 @@
 ;; Goto Line
 (global-set-key [remap goto-line] 'goto-line-with-feedback)
 
-;; Show-hide
-(global-set-key (kbd "") 'hs-show-block)
-(global-set-key (kbd "") 'hs-show-all)
-(global-set-key (kbd "") 'hs-hide-block)
-(global-set-key (kbd "") 'hs-hide-all)
-
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (global-set-key (kbd "C-x C-c") 'delete-frame)
 
