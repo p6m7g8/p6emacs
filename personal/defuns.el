@@ -7,7 +7,8 @@
 ;; For loading packages from the Emacs Lisp Package Archive (ELPA)
 (defun package (package)
     (when (not (package-installed-p package))
-      (package-install package)))
+      (package-install package)
+      (require package)))
 
 ;; For loading libraries from the vendor directory
 ;; Modified from defunkt's original version to support autoloading.

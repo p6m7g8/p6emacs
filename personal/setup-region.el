@@ -1,5 +1,26 @@
 (package 'expand-region)
 
+;; Browse kill ring
+(package 'browse-kill-ring)
+(setq browse-kill-ring-quit-action 'save-and-restore)
+
+;; Run at full power please
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+
+;; Keep region when undoing in region
+(defadvice undo-tree-undo (around keep-region activate)
+  (if (use-region-p)
+      (let ((m (set-marker (make-marker) (mark)))
+	    (p (set-marker (make-marker) (point))))
+	ad-do-it
+	(goto-char p)
+	(set-mark m)
+	(set-marker p nil)
+	(set-marker m nil))
+    ad-do-it))
+
 (global-set-key (kbd "C-w") 'kill-region-or-backward-word)
 
 ;; Killing text
@@ -18,18 +39,9 @@
 ;; Duplicate region
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
-;; Keep region when undoing in region
-(defadvice undo-tree-undo (around keep-region activate)
-  (if (use-region-p)
-      (let ((m (set-marker (make-marker) (mark)))
-	    (p (set-marker (make-marker) (point))))
-	ad-do-it
-	(goto-char p)
-	(set-mark m)
-	(set-marker p nil)
-	(set-marker m nil))
-    ad-do-it))
-
+;; Expand Region
 (global-set-key (kbd "C-@") 'er/expand-region)
+(setq expand-region-fast-keys-enabled nil) ;; Don't use expand-region fast keys
+(setq er--show-expansion-message t) ;; Show expand-region command used
 
 (provide 'setup-region)

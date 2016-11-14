@@ -38,6 +38,11 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
+;; Highlight escape sequences
+(package 'highlight-escape-sequences)
+(hes-mode)
+(put 'font-lock-regexp-grouping-backslash 'face-alias 'font-lock-builtin-face)
+
 (setq font-lock-maximum-decoration t
       color-theme-is-global t
       truncate-partial-width-windows nil)
@@ -67,5 +72,24 @@
 
 ;; Seed the random-number generator
 (random t)
+
+(setq is-mac (equal system-type 'darwin))
+
+(when is-mac
+  (package 'exec-path-from-shell)
+  (exec-path-from-shell-initialize))
+
+;; Save point position between sessions
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file (expand-file-name ".places" user-emacs-directory))
+
+;; Write backup files to own directory
+(setq backup-directory-alist
+      `(("." . ,(expand-file-name
+		 (concat user-emacs-directory "backups")))))
+
+;; Make backups of files, even when they're in version control
+(setq vc-make-backup-files t)
 
 (provide 'setup-global)
