@@ -9,12 +9,9 @@
 (require 's)
 
 (recentf-mode 1)
-(setq recentf-max-menu-items 25)
-(defvar user-home-directory (concat (expand-file-name "~") "/"))
-
+(flx-ido-mode 1)
 (ido-mode 1)
 (ido-everywhere 1)
-(flx-ido-mode 1)
 (ido-vertical-mode 1)
 (ido-ubiquitous-mode 1)
 (ido-at-point-mode)
@@ -76,8 +73,11 @@ Symbols matching the text at point are put first in the completion list."
 	 (file (completing-read "Choose recent file: " files)))
     (find-file (cdr (assoc file recent-files)))))
 
+(defvar user-home-directory (concat (expand-file-name "~") "/"))
+
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (setq ido-use-faces nil) ; disable ido faces to see flx highlights.
+(setq recentf-max-menu-items 25)
 (setq ido-enable-flex-matching t) ; fuzzy matching is a must have
 (setq ido-enable-last-directory-history nil) ; forget latest selected directory names
 
