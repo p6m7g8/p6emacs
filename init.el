@@ -24,6 +24,7 @@
 (personal 'setup-hs)
 (personal 'setup-ido)
 (personal 'setup-server-mode)
+(personal 'setup-smex)
 (personal 'setup-region)
 (personal 'setup-popup)
 (personal 'setup-theme)

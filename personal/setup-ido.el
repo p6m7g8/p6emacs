@@ -15,4 +15,22 @@
 
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
+(global-set-key (kbd "C-x M-f") 'ido-find-file-other-window)
+(global-set-key (kbd "C-x f") 'recentf-ido-find-file)
+(global-set-key (kbd "C-x C-p") 'find-or-create-file-at-point)
+(global-set-key (kbd "C-x M-p") 'find-or-create-file-at-point-other-window)
+(global-set-key (kbd "C-c y") 'bury-buffer)
+(global-set-key (kbd "C-c r") 'revert-buffer)
+(global-set-key (kbd "M-`") 'file-cache-minibuffer-complete)
+
+(define-key global-map (kbd "C-x C-n") 'make-frame-command)
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
+
+;; toggle two most recent buffers
+(fset 'quick-switch-buffer [?\C-x ?b return])
+(global-set-key (kbd "s-b") 'quick-switch-buffer)
+
+(global-set-key (kbd "M-s e") 'sudo-edit)
+
+
 (provide 'setup-ido)
