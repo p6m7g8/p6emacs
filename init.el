@@ -25,6 +25,7 @@
 (personal 'setup-hippie)
 (personal 'setup-hs)
 (personal 'setup-ido)
+(personal 'setup-multiple-cursors)
 (personal 'setup-server-mode)
 (personal 'setup-smex)
 (personal 'setup-region)
