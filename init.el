@@ -15,6 +15,13 @@
 (package-initialize)
 (when (not package-archive-contents) (package-refresh-contents))
 
+;; Functions (load all files in defuns-dir)
+(package 's)
+(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
+
 (personal 'setup-ace-windows)
 (personal 'setup-ag)
 (personal 'setup-auto-complete)
