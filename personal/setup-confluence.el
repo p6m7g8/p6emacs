@@ -20,7 +20,7 @@
        (add-hook 'confluence-mode-hook 'longlines-mode)
        (add-hook 'confluence-before-save-hook 'longlines-before-revert-hook)
        (add-hook 'confluence-before-revert-hook 'longlines-before-revert-hook)
-       (add-hook 'confluence-mode-hook '(lambda () (local-set-key "\C-j" 'confluence-newline-and-indent))))))
+       (add-hook 'confluence-mode-hook '(lambda () (local-set-key "\C-c j" 'confluence-newline-and-indent))))))
 
 ;; LongLines mode: http://www.emacswiki.org/emacs-en/LongLines
 (autoload 'longlines-mode "longlines" "LongLines Mode." t)

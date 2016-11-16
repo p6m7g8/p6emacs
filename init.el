@@ -18,7 +18,7 @@
 ;; Functions (load all files in defuns-dir)
 (package 's)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
+(dolist (file (directory-files defuns-dir t "*.el"))
   (when (file-regular-p file)
     (load file)))
 
@@ -30,6 +30,7 @@
 (personal 'setup-ffip)
 (personal 'setup-flycheck)
 (personal 'setup-global)
+(personal 'setup-hardcore)
 (personal 'setup-hippie)
 (personal 'setup-hs)
 (personal 'setup-ido)
