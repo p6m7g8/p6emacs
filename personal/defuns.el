@@ -1,9 +1,5 @@
 ;;; Personal functions
 
-;; For loading personal configurations
-(defun personal (library)
-  (load (concat "~/.emacs.d/personal/" (symbol-name library)) 'noerror))
-
 ;; For loading packages from the Emacs Lisp Package Archive (ELPA)
 (defun package (package)
     (when (not (package-installed-p package))
@@ -15,18 +11,18 @@
 ;; http://github.com/defunkt/emacs/blob/master/defunkt/defuns.el
 (defun vendor (library &rest autoload-functions)
   (let* ((file (symbol-name library))
-         (normal (concat "~/.emacs.d/vendor/" file))
-         (suffix (concat normal ".el"))
-         (found nil))
+	 (normal (concat "~/.emacs.d/vendor/" file))
+	 (suffix (concat normal ".el"))
+	 (found nil))
     (cond
      ((file-directory-p normal) (add-to-list 'load-path normal) (set 'found t))
      ((file-directory-p suffix) (add-to-list 'load-path suffix) (set 'found t))
      ((file-exists-p suffix)  (set 'found t)))
     (when found
       (if autoload-functions
-          (dolist (autoload-function autoload-functions)
-            (autoload autoload-function (symbol-name library) nil t))
-        (require library)))))
+	  (dolist (autoload-function autoload-functions)
+	    (autoload autoload-function (symbol-name library) nil t))
+	(require library)))))
 
 ;; Arrows are common, especially in ruby
 (defun insert-arrow ()
@@ -44,10 +40,10 @@
   "Go to the matching parenthesis character if one is adjacent to point."
   (interactive "^p")
   (cond ((looking-at "\\s(") (forward-sexp arg))
-        ((looking-back "\\s)" 1) (backward-sexp arg))
-        ;; Now, try to succeed from inside of a bracket
-        ((looking-at "\\s)") (forward-char) (backward-sexp arg))
-        ((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
+	((looking-back "\\s)" 1) (backward-sexp arg))
+	;; Now, try to succeed from inside of a bracket
+	((looking-at "\\s)") (forward-char) (backward-sexp arg))
+	((looking-back "\\s(" 1) (backward-char) (forward-sexp arg))))
 
 ;; Make the whole buffer pretty and consistent
 (defun iwb()
@@ -70,8 +66,8 @@ kill all other visible buffers."
   (interactive "P")
   (if p
       (dolist (window (window-list))
-        (unless (equal (window-buffer window) (current-buffer))
-          (kill-buffer (window-buffer window)))))
+	(unless (equal (window-buffer window) (current-buffer))
+	  (kill-buffer (window-buffer window)))))
   (delete-other-windows))
 
 ;; ;; Use the text around point as a cue what it is that we want from the

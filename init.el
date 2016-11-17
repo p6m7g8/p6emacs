@@ -1,27 +1,13 @@
-;; setup
-;; ---------------------
 (setq custom-file "~/.emacs.d/personal/custom.el")
 (load custom-file 'noerror)
 
-(load "~/.emacs.d/personal/defuns")
+;; For loading personal configurations
+(defun personal (library)
+  (load (concat "~/.emacs.d/personal/" (symbol-name library))))
 
-(add-to-list 'load-path "~/.emacs.d/vendor/")
-
-;; elpa managed
-;; ------------------
-(setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
-			 ("marmalade" . "http://marmalade-repo.org/packages/")
-			 ("melpa"     . "http://melpa.milkbox.net/packages/")))
-(package-initialize)
-(when (not package-archive-contents) (package-refresh-contents))
-
-;; Functions (load all files in defuns-dir)
-(package 's)
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "*.el"))
-  (when (file-regular-p file)
-    (load file)))
-
+; setup
+(personal 'setup-package)
+(personal 'setup-defuns)
 (personal 'setup-ace-windows)
 (personal 'setup-ag)
 (personal 'setup-auto-complete)
@@ -52,3 +38,5 @@
 (personal 'setup-ruby)
 (personal 'setup-shell)
 (personal 'setup-yaml)
+
+(provide 'init)
