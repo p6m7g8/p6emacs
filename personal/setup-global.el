@@ -83,6 +83,24 @@
   (package 'exec-path-from-shell)
   (exec-path-from-shell-initialize))
 
+; change command to meta, and ignore option to use weird Norwegian keyboard
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+(setq ns-function-modifier 'hyper)
+
+(global-set-key (kbd "s-u") 'universal-argument)
+(global-set-key (kbd "s--") 'negative-argument)
+(--dotimes 5 (global-set-key (read-kbd-macro (format "s-%d" it)) 'digit-argument))
+;; keybinding to toggle full screen mode
+(global-set-key (quote [M-f10]) (quote ns-toggle-fullscreen))
+
+;; Open files
+(defun mac-open-current-file ()
+  (interactive)
+  (shell-command (concat "open " (buffer-file-name))))
+
+(global-set-key (kbd "C-c C-S-o") 'mac-open-current-file)
+
 ;; Save point position between sessions
 (require 'saveplace)
 (setq-default save-place t)
