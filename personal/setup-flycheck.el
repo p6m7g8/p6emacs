@@ -24,13 +24,10 @@ up before you execute another command."
   (flycheck-clear-idle-change-timer)
   (flycheck-buffer-automatically 'idle-change))
 
-;; Each buffer gets its own idle-change-delay because of the
-;; buffer-sensitive adjustment above.
 (make-variable-buffer-local 'flycheck-idle-change-delay)
 
-(eval-after-load 'flycheck
-  '(custom-set-variables
-    '(flycheck-display-errors-function #'flycheck-pos-tip-error-messages)))
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'flycheck-after-syntax-check-hook
