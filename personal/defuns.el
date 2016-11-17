@@ -111,26 +111,6 @@ point and around or after mark are interchanged."
 (require 'cl)
 (defun rotate-left (l)
   (append  (cdr l) (list (car l))))
-(defun rotate-windows ()
-  (interactive)
-  (let ((start-positions (rotate-left (mapcar 'window-start (window-list))))
-        (buffers (rotate-left (mapcar 'window-buffer (window-list)))))
-    (mapcar* (lambda (window  buffer pos)
-               (set-window-buffer window buffer)
-               (set-window-start window pos))
-             (window-list)
-             buffers
-             start-positions)))
-
-;; Borrowed from http://whattheemacsd.com/key-bindings.el-01.html
-(defun goto-line-with-feedback ()
-  "Show line numbers temporarily, while prompting for the line number input"
-  (interactive)
-  (unwind-protect
-      (progn
-        (linum-mode 1)
-        (goto-line (read-number "Goto line: ")))
-    (linum-mode -1)))
 
 ;; Borrowed from http://superuser.com/q/603421/8424
 (defun replace-smart-quotes (beg end)
