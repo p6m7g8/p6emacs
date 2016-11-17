@@ -1,8 +1,8 @@
-(package 's)
-(package 'dash)
-
 (load "~/.emacs.d/personal/defuns.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/")
+
+(package 's)
+(package 'dash)
 
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 

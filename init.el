@@ -1,3 +1,5 @@
+;(package-initialize)
+
 (setq custom-file "~/.emacs.d/personal/custom.el")
 (load custom-file 'noerror)
 
@@ -19,6 +21,7 @@
 (personal 'setup-hardcore)
 (personal 'setup-hippie)
 (personal 'setup-hs)
+(personal 'setup-keys)
 (personal 'setup-ido)
 (personal 'setup-multiple-cursors)
 (personal 'setup-server-mode)

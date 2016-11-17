@@ -15,6 +15,3 @@
 (global-set-key (kbd "C-c C-b") 'browse-url-at-point)
 
 (provide 'setup-w3m)
-
-
-http://elpa.gnu.org/packages/
