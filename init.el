@@ -41,6 +41,7 @@
 (personal 'setup-popup)
 (personal 'setup-theme)
 (personal 'setup-utf8)
+(personal 'setup-w3m)
 
 ; languages
 (personal 'setup-confluence)
