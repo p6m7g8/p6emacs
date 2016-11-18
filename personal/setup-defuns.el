@@ -4,9 +4,10 @@
 (package 's)
 (package 'dash)
 
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-
-(dolist (file (directory-files defuns-dir t "*.el"))
-    (load file))
+(load "~/.emacs.d/defuns/buffer-defuns.el")
+(load "~/.emacs.d/defuns/editing-defuns.el")
+(load "~/.emacs.d/defuns/file-defuns.el")
+(load "~/.emacs.d/defuns/lisp-defuns.el")
+(load "~/.emacs.d/defuns/misc-defuns.el")
 
 (provide 'setup-defuns)

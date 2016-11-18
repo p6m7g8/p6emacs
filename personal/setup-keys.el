@@ -1,5 +1,4 @@
-(package 'command-log-mode)
-
-(add-hook 'LaTeX-mode-hook 'command-log-mode)
+;(package 'mwe-log-commands)
+;(add-hook 'prog-mode-hook #'mwe-log-commands)
 
 (provide 'setup-keys)
