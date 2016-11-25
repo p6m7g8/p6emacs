@@ -19,13 +19,34 @@
 	(set-marker m nil))
     ad-do-it))
 
+;; Killing text
+(defun kill-and-retry-line ()
+  "Kill the entire current line and reposition point at indentation"
+  (interactive)
+  (back-to-indentation)
+  (kill-line))
+(global-set-key (kbd "C-S-k") 'kill-and-retry-line)
+
+;; kill region if active, otherwise kill backward word
+(defun kill-region-or-backward-word ()
+  (interactive)
+  (if (region-active-p)
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word 1)))
 (global-set-key (kbd "C-w") 'kill-region-or-backward-word)
 
-;; Killing text
-(global-set-key (kbd "C-S-k") 'kill-and-retry-line)
+(defun kill-to-beginning-of-line ()
+  (interactive)
+  (kill-region (save-excursion (beginning-of-line) (point))
+	       (point)))
 (global-set-key (kbd "C-c C-w") 'kill-to-beginning-of-line)
 
 ;; Use M-w for copy-line if no active region
+(defun save-region-or-current-line (arg)
+  (interactive "P")
+  (if (region-active-p)
+      (kill-ring-save (region-beginning) (region-end))
+    (copy-line arg)))
 (global-set-key (kbd "M-w") 'save-region-or-current-line)
 (global-set-key (kbd "s-w") 'save-region-or-current-line)
 (global-set-key (kbd "M-W") (lambda (save-region-or-current-line 1)))
@@ -35,6 +56,17 @@
 (global-set-key (kbd "C-c u") 'uncomment-region)
 
 ;; Duplicate region
+(defun duplicate-current-line-or-region (arg)
+  "Duplicates the current line or region ARG times.
+If there's no region, the current line will be duplicated."
+  (interactive "p")
+  (if (region-active-p)
+      (let ((beg (region-beginning))
+	    (end (region-end)))
+	(duplicate-region arg beg end)
+	(one-shot-keybinding "d" (λ (duplicate-region 1 beg end))))
+    (duplicate-current-line arg)
+    (one-shot-keybinding "d" 'duplicate-current-line)))
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
 
 ;; Fold the active region
