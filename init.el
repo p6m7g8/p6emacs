@@ -1,10 +1,16 @@
-;(package-initialize)
+;;; package -- Summary
+;;; Commentary:
 
+;;; Code:
+;(package-initialize)
 (setq custom-file "~/.emacs.d/personal/custom.el")
 (load custom-file 'noerror)
 
 ;; For loading personal configurations
 (defun personal (library)
+  "Load a personal elisp file.
+Return: none.
+LIBRARY is ... the library to load"
   (load (concat "~/.emacs.d/personal/" (symbol-name library))))
 
 ; setup
@@ -43,9 +49,9 @@
 (personal 'setup-shell)
 (personal 'setup-yaml)
 
-; cleanup mode-line
-(package 'rich-minority)
-(rich-minority-mode 1)
-(setf rm-blacklist "")
+; cleanup mode-line [last]
+(personal 'setup-modeline)
 
 (provide 'init)
+
+;;; init.el ends here
