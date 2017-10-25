@@ -35,6 +35,7 @@ LIBRARY is ... the library to load"
 (personal 'setup-region)
 (personal 'setup-popup)
 (personal 'setup-theme)
+(personal 'setup-ci)
 (personal 'setup-utf8)
 (personal 'setup-w3m)
 

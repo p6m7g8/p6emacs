@@ -90,7 +90,7 @@
 
 (global-set-key (kbd "s-u") 'universal-argument)
 (global-set-key (kbd "s--") 'negative-argument)
-(--dotimes 5 (global-set-key (read-kbd-macro (format "s-%d" it)) 'digit-argument))
+;;(dotimes 5 (global-set-key (read-kbd-macro (format "s-%d" it)) 'digit-argument))
 ;; keybinding to toggle full screen mode
 (global-set-key (quote [M-f10]) (quote ns-toggle-fullscreen))
 
