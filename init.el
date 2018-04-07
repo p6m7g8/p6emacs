@@ -41,6 +41,7 @@ LIBRARY is ... the library to load"
 
 ; languages
 (personal 'setup-confluence)
+(personal 'setup-golang)
 (personal 'setup-js)
 (personal 'setup-markdown)
 (personal 'setup-magit)
