@@ -41,8 +41,8 @@
 
      (define-key vc-annotate-mode-map (kbd "q") 'vc-annotate-quit)))
 
-(package 'magit-gh-pulls)
-(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
+;(package 'magit-gh-pulls)
+;(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
 
 (global-set-key (kbd "C-x m") 'magit-status-fullscreen)
 (autoload 'magit-status-fullscreen "magit")

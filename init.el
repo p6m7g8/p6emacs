@@ -43,6 +43,7 @@ LIBRARY is ... the library to load"
 (personal 'setup-confluence)
 (personal 'setup-golang)
 (personal 'setup-js)
+(personal 'setup-typescript)
 (personal 'setup-markdown)
 (personal 'setup-magit)
 (personal 'setup-perl)
