@@ -45,6 +45,7 @@ LIBRARY is ... the library to load"
 (personal 'setup-js)
 (personal 'setup-typescript)
 (personal 'setup-markdown)
+(personal 'setup-terraform)
 (personal 'setup-magit)
 (personal 'setup-perl)
 (personal 'setup-python)

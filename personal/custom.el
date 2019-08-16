@@ -12,7 +12,8 @@
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(package-selected-packages
    (quote
-    (company company-mode tide go-mode travis tt-mode rich-minority mwe-log-commands command-log-mode w3m magit-gh-pulls hardcore-mode elpy hippie-expand hippie yaml-mode enh-ruby-mode ruby-guard magit markdown-toc gh-md markdown-mode+ markdown-mode js3-mode confluence expand-region ido-vertical-mode flx-isearch flx-ido ibuffer-vc auto-complete ag ace-jump-mode ace-window))))
+    (company-quickhelp company-quickhelw company-quickhelp-mode company-terraform terraform-mode hcl-mode company company-mode tide go-mode travis tt-mode rich-minority mwe-log-commands command-log-mode w3m magit-gh-pulls hardcore-mode elpy hippie-expand hippie yaml-mode enh-ruby-mode ruby-guard magit markdown-toc gh-md markdown-mode+ markdown-mode js3-mode confluence expand-region ido-vertical-mode flx-isearch flx-ido ibuffer-vc auto-complete ag ace-jump-mode ace-window)))
+ '(terraform-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
