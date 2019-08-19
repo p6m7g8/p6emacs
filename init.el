@@ -41,7 +41,7 @@ LIBRARY is ... the library to load"
 
 ; languages
 (personal 'setup-confluence)
-(personal 'setup-docker)
+;(personal 'setup-docker)
 (personal 'setup-golang)
 (personal 'setup-js)
 (personal 'setup-typescript)
