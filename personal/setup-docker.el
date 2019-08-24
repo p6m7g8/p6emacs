@@ -7,3 +7,4 @@
 (package 'docker)
 (setq docker-image-run-arguments '("-i" "-t" "--rm"))
 
+(provide 'setup-docker)
