@@ -1,8 +1,10 @@
 p6df::modules::p6emacs::version() { echo "0.0.1" }
-p6df::modules::p6emacs::deps()    {
+
+p6df::modules::p6emacs::deps() {
     ModuleDeps=(
-	john2x/jenkinsfile-mode
-	Silex/docker.el
+      p6m7g8/p6common
+      john2x/jenkinsfile-mode
+	  Silex/docker.el
     )
 }
 
