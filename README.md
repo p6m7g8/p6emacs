@@ -38,9 +38,11 @@
 
 - [Change Log](CHANGELOG.md)
 
-### Usage
+## Usage
 
-#### init.zsh:
+### p6emacs:
+
+#### p6emacs/init.zsh:
 
 - p6df::modules::p6emacs::deps()
 - p6df::modules::p6emacs::home::symlink()
