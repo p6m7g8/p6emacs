@@ -23,7 +23,6 @@ p6df::modules::p6emacs::deps() {
 ######################################################################
 p6df::modules::p6emacs::home::symlink() {
 
-    ln -fs $P6_DFZ_SRC_DIR/Silex/docker.el $P6_DFZ_SRC_P6M7G8_DIR/p6emacs/elpa/docker-20190730.711
-
-
+    echo ln -fs $P6_DFZ_SRC_DIR/Silex/docker.el $P6_DFZ_SRC_P6M7G8_DIR/p6emacs/elpa/docker-20190730.711
+#    ln -fs $P6_DFZ_SRC_DIR/Silex/docker.el $P6_DFZ_SRC_P6M7G8_DIR/p6emacs/elpa/docker-20190730.711
 }
