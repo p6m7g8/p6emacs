@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/p6m7g8/p6emacs/compare/v1.1.0...v1.1.1) (2021-04-04)
+
+
+* **README:** updates generator ([#11](https://github.com/p6m7g8/p6emacs/issues/11)) ([6f1a170](https://github.com/p6m7g8/p6emacs/commit/6f1a1705fa858f7df9475277398a13ae9c3fa9bf))
+* Coc -> .github ([a6e6929](https://github.com/p6m7g8/p6emacs/commit/a6e69298ae179aa0c71e81626b31464c90beacd7))
+
 ## 1.1.0 (2020-12-06)
 
 
